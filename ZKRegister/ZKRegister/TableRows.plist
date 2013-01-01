@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>Cell</key>
+		<string>ZKTextFieldCell</string>
+		<key>Title</key>
+		<string>Name</string>
+		<key>Placeholder</key>
+		<string>Please enter name</string>
+		<key>Key</key>
+		<string>name</string>
+		<key>IsSecure</key>
+		<false/>
+		<key>KeyboardType</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>Cell</key>
+		<string>ZKTextFieldCell</string>
+		<key>Title</key>
+		<string>Email</string>
+		<key>Placeholder</key>
+		<string>Please enter email</string>
+		<key>Key</key>
+		<string>email</string>
+		<key>IsSecure</key>
+		<false/>
+		<key>KeyboardType</key>
+		<integer>7</integer>
+	</dict>
+	<dict>
+		<key>Cell</key>
+		<string>ZKTextFieldCell</string>
+		<key>Title</key>
+		<string>Phone</string>
+		<key>Placeholder</key>
+		<string>Please enter phone</string>
+		<key>Key</key>
+		<string>phone</string>
+		<key>IsSecure</key>
+		<false/>
+		<key>KeyboardType</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>Cell</key>
+		<string>ZKTextFieldCell</string>
+		<key>Title</key>
+		<string>Password</string>
+		<key>Placeholder</key>
+		<string>Please enter password</string>
+		<key>Key</key>
+		<string>password</string>
+		<key>IsSecure</key>
+		<true/>
+		<key>KeyboardType</key>
+		<integer>0</integer>
+	</dict>
+	<dict>
+		<key>Cell</key>
+		<string>ZKSliderCell</string>
+		<key>Title</key>
+		<string>Rating</string>
+		<key>Value</key>
+		<integer>4</integer>
+		<key>Key</key>
+		<string>rating</string>
+	</dict>
+</array>
+</plist>

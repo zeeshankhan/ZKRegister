@@ -18,6 +18,12 @@
 		D03200CA16929D8F003A5E16 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03200C916929D8F003A5E16 /* Default-568h@2x.png */; };
 		D03200CD16929D8F003A5E16 /* ZKViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D03200CC16929D8F003A5E16 /* ZKViewController.m */; };
 		D03200D016929D8F003A5E16 /* ZKViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03200CE16929D8F003A5E16 /* ZKViewController.xib */; };
+		D03200F01692A097003A5E16 /* ZKSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D03200E81692A097003A5E16 /* ZKSliderCell.m */; };
+		D03200F11692A097003A5E16 /* ZKSliderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03200E91692A097003A5E16 /* ZKSliderCell.xib */; };
+		D03200F21692A097003A5E16 /* ZKTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D03200EB1692A097003A5E16 /* ZKTextFieldCell.m */; };
+		D03200F31692A097003A5E16 /* ZKTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D03200EC1692A097003A5E16 /* ZKTextFieldCell.xib */; };
+		D03200F41692A097003A5E16 /* TableRows.plist in Resources */ = {isa = PBXBuildFile; fileRef = D03200ED1692A097003A5E16 /* TableRows.plist */; };
+		D03200F51692A097003A5E16 /* ZKRegisterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D03200EF1692A097003A5E16 /* ZKRegisterModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +43,15 @@
 		D03200CB16929D8F003A5E16 /* ZKViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZKViewController.h; sourceTree = "<group>"; };
 		D03200CC16929D8F003A5E16 /* ZKViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZKViewController.m; sourceTree = "<group>"; };
 		D03200CF16929D8F003A5E16 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ZKViewController.xib; sourceTree = "<group>"; };
+		D03200E71692A097003A5E16 /* ZKSliderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKSliderCell.h; sourceTree = "<group>"; };
+		D03200E81692A097003A5E16 /* ZKSliderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKSliderCell.m; sourceTree = "<group>"; };
+		D03200E91692A097003A5E16 /* ZKSliderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKSliderCell.xib; sourceTree = "<group>"; };
+		D03200EA1692A097003A5E16 /* ZKTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKTextFieldCell.h; sourceTree = "<group>"; };
+		D03200EB1692A097003A5E16 /* ZKTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKTextFieldCell.m; sourceTree = "<group>"; };
+		D03200EC1692A097003A5E16 /* ZKTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ZKTextFieldCell.xib; sourceTree = "<group>"; };
+		D03200ED1692A097003A5E16 /* TableRows.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = TableRows.plist; sourceTree = "<group>"; };
+		D03200EE1692A097003A5E16 /* ZKRegisterModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZKRegisterModel.h; sourceTree = "<group>"; };
+		D03200EF1692A097003A5E16 /* ZKRegisterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZKRegisterModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +103,10 @@
 				D03200CB16929D8F003A5E16 /* ZKViewController.h */,
 				D03200CC16929D8F003A5E16 /* ZKViewController.m */,
 				D03200CE16929D8F003A5E16 /* ZKViewController.xib */,
+				D03200E61692A097003A5E16 /* Custom Cells */,
+				D03200ED1692A097003A5E16 /* TableRows.plist */,
+				D03200EE1692A097003A5E16 /* ZKRegisterModel.h */,
+				D03200EF1692A097003A5E16 /* ZKRegisterModel.m */,
 				D03200BA16929D8F003A5E16 /* Supporting Files */,
 			);
 			path = ZKRegister;
@@ -105,6 +124,19 @@
 				D03200C916929D8F003A5E16 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D03200E61692A097003A5E16 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D03200E71692A097003A5E16 /* ZKSliderCell.h */,
+				D03200E81692A097003A5E16 /* ZKSliderCell.m */,
+				D03200E91692A097003A5E16 /* ZKSliderCell.xib */,
+				D03200EA1692A097003A5E16 /* ZKTextFieldCell.h */,
+				D03200EB1692A097003A5E16 /* ZKTextFieldCell.m */,
+				D03200EC1692A097003A5E16 /* ZKTextFieldCell.xib */,
+			);
+			path = "Custom Cells";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +196,9 @@
 				D03200C816929D8F003A5E16 /* Default@2x.png in Resources */,
 				D03200CA16929D8F003A5E16 /* Default-568h@2x.png in Resources */,
 				D03200D016929D8F003A5E16 /* ZKViewController.xib in Resources */,
+				D03200F11692A097003A5E16 /* ZKSliderCell.xib in Resources */,
+				D03200F31692A097003A5E16 /* ZKTextFieldCell.xib in Resources */,
+				D03200F41692A097003A5E16 /* TableRows.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +212,9 @@
 				D03200C016929D8F003A5E16 /* main.m in Sources */,
 				D03200C416929D8F003A5E16 /* ZKAppDelegate.m in Sources */,
 				D03200CD16929D8F003A5E16 /* ZKViewController.m in Sources */,
+				D03200F01692A097003A5E16 /* ZKSliderCell.m in Sources */,
+				D03200F21692A097003A5E16 /* ZKTextFieldCell.m in Sources */,
+				D03200F51692A097003A5E16 /* ZKRegisterModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -292,6 +330,7 @@
 				D03200D516929D8F003A5E16 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

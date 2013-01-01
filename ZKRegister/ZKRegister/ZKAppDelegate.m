@@ -2,8 +2,8 @@
 //  ZKAppDelegate.m
 //  ZKRegister
 //
-//  Created by Zeeshan Khan on 01/01/13.
-//  Copyright (c) 2013 Zeeshan Khan. All rights reserved.
+//  Created by Zeeshan Khan on 13/11/12.
+//  Copyright (c) 2012 Zeeshan Khan. All rights reserved.
 //
 
 #import "ZKAppDelegate.h"
@@ -16,8 +16,15 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.viewController = [[ZKViewController alloc] initWithNibName:@"ZKViewController" bundle:nil];
-    self.window.rootViewController = self.viewController;
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+        self.viewController = [[ZKViewController alloc] initWithNibName:@"ZKViewController" bundle:nil];
+    } else {
+        self.viewController = [[ZKViewController alloc] initWithNibName:@"ZKViewController_iPad" bundle:nil];
+    }
+    
+    UINavigationController *navCont = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+
+    self.window.rootViewController = navCont;
     [self.window makeKeyAndVisible];
     return YES;
 }
