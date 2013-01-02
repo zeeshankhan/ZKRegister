@@ -11,9 +11,6 @@
 #import "ZKTextFieldCell.h"
 
 @interface ZKViewController ()
-{
-    UITextField *txtTemp;
-}
 @property (nonatomic, strong) UITableView *tblRegister;
 @property (nonatomic, strong) NSMutableArray *arrRows;
 @property (nonatomic, strong) ZKRegisterModel *model;
@@ -23,9 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
     self.navigationItem.title = @"Register";
-    
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveAction)];
     
     _tblRegister = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     _tblRegister.dataSource = self;
@@ -40,15 +36,6 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
     return YES;
-}
-
-- (void)saveAction {
-    if (txtTemp)
-        [txtTemp resignFirstResponder];
-    NSLog(@"txtTemp %@", txtTemp.text);
-    if (_model) {
-        NSLog(@"%@", [[self model] name]);
-    }
 }
 
 - (NSMutableArray*)arrRows {
@@ -82,23 +69,11 @@
         [[NSBundle mainBundle] loadNibNamed:strIdentifier owner:self options:nil];
     }
     
-    if ([_cell isKindOfClass:[ZKTextFieldCell class]]) {
-        ZKTextFieldCell *inputCell = (ZKTextFieldCell*)_cell;
-        txtTemp = [inputCell txtInput];
-//        [txtTemp setDelegate:self];
-    }
-    
     [(id<ConfigureCustomCellDelegate>)_cell initializeCustomCellPropertiesWithCellDictionary:dicCell andObject:self];
     return _cell;
 }
 
-#pragma mark - UITextFieldDelegate
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-    NSLog(@"called");
-    return [textField resignFirstResponder];
-}
-
-#pragma mark -
+#pragma mark - CallBackFromCustomCellDelegate
 
 - (void)setCustomCellValue:(id)value forKey:(id)key {
     NSLog(@"%@ - %@", value, key);
