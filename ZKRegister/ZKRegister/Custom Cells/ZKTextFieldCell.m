@@ -44,8 +44,14 @@
     self.txtInput.keyboardType = type;
 }
 
+#pragma mark - UITextFieldDelegate
+
 - (void)textFieldDidEndEditing:(UITextField *)textField {
     [[self callBackDelegate] setCustomCellValue:textField.text forKey:[[self dicProperties] objectForKey:@"Key"]];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    return [textField resignFirstResponder];
 }
 
 @end

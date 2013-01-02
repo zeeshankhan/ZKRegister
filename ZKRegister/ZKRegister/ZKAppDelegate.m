@@ -7,23 +7,16 @@
 //
 
 #import "ZKAppDelegate.h"
-
 #import "ZKViewController.h"
 
 @implementation ZKAppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        self.viewController = [[ZKViewController alloc] initWithNibName:@"ZKViewController" bundle:nil];
-    } else {
-        self.viewController = [[ZKViewController alloc] initWithNibName:@"ZKViewController_iPad" bundle:nil];
-    }
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    UINavigationController *navCont = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    ZKViewController *viewController = [[ZKViewController alloc] initWithNibName:@"ZKViewController" bundle:nil];
+    UINavigationController *navCont = [[UINavigationController alloc] initWithRootViewController:viewController];
 
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.window.rootViewController = navCont;
     [self.window makeKeyAndVisible];
     return YES;

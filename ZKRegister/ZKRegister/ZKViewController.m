@@ -8,8 +8,12 @@
 
 #import "ZKViewController.h"
 #import "ZKRegisterModel.h"
+#import "ZKTextFieldCell.h"
 
 @interface ZKViewController ()
+{
+    UITextField *txtTemp;
+}
 @property (nonatomic, strong) UITableView *tblRegister;
 @property (nonatomic, strong) NSMutableArray *arrRows;
 @property (nonatomic, strong) ZKRegisterModel *model;
@@ -21,10 +25,7 @@
     [super viewDidLoad];
     self.navigationItem.title = @"Register";
     
-    NSArray *arr = [[NSArray alloc] initWithObjects:@"Zee",[NSNumber numberWithBool:YES], nil];
-    [arr enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        NSLog(@"%@",obj);
-    }];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveAction)];
     
     _tblRegister = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     _tblRegister.dataSource = self;
@@ -39,6 +40,15 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation {
     return YES;
+}
+
+- (void)saveAction {
+    if (txtTemp)
+        [txtTemp resignFirstResponder];
+    NSLog(@"txtTemp %@", txtTemp.text);
+    if (_model) {
+        NSLog(@"%@", [[self model] name]);
+    }
 }
 
 - (NSMutableArray*)arrRows {
@@ -71,14 +81,27 @@
     if (_cell == nil) {
         [[NSBundle mainBundle] loadNibNamed:strIdentifier owner:self options:nil];
     }
+    
+    if ([_cell isKindOfClass:[ZKTextFieldCell class]]) {
+        ZKTextFieldCell *inputCell = (ZKTextFieldCell*)_cell;
+        txtTemp = [inputCell txtInput];
+//        [txtTemp setDelegate:self];
+    }
+    
     [(id<ConfigureCustomCellDelegate>)_cell initializeCustomCellPropertiesWithCellDictionary:dicCell andObject:self];
     return _cell;
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    NSLog(@"called");
+    return [textField resignFirstResponder];
 }
 
 #pragma mark -
 
 - (void)setCustomCellValue:(id)value forKey:(id)key {
-    //NSLog(@"%@ - %@", value, key);
+    NSLog(@"%@ - %@", value, key);
     if (_model == nil) {
         _model = [[ZKRegisterModel alloc] init];
     }

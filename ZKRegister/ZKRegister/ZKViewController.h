@@ -16,6 +16,6 @@
 - (void)setCustomCellValue:(id)value forKey:(id)key;
 @end
 
-@interface ZKViewController : UIViewController <UITableViewDataSource, CallBackFromCustomCellDelegate>
+@interface ZKViewController : UIViewController <UITableViewDataSource, CallBackFromCustomCellDelegate, UITextFieldDelegate>
 @property (nonatomic, strong) IBOutlet UITableViewCell *cell;
 @end
